@@ -7,26 +7,27 @@
     <title>Todo Lists</title>
 </head>
 <body>
-    <main>
-        <div>
-           <h1>My lists</h1>
-           <table>
+<main>
+    <div>
+        <h1>{{ todo_list_detail.name }}</h1>
+        <h2>Tasks</h2>
+        <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Number of items</th>
+                    <th>Task</th>
+                    <th>Due date</th>
                 </tr>
             </thead>
             <tbody>
-                {% for todo_list in todo_list_list %}
+                {% for todo_list in todo_list_detail.items.all %}
                 <tr>
-                    <td><a href="{% url 'todo_list_detail' todo_list.id %}">{{ todo_list }}</a></td>
-                    <td> {{ todo_list.task_count }} </td>
+                    <td>{{ todo_list.task }}</td>
+                    <td>{{ todo_list.due_date }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
-           </table>
-        </div>
-    </main>
+        </table>
+    </div>
+</main>
 </body>
 </html>

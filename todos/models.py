@@ -9,6 +9,9 @@ class TodoList(models.Model):
     def __str__(self):
         return self.name
 
+    def task_count(self):
+        return self.items.count()
+
 
 class TodoItem(models.Model):
     task = models.CharField(max_length=100)
