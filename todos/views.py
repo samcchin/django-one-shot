@@ -29,9 +29,7 @@ def todo_list_create(request):
             return redirect("todo_list_detail", id=list.id)
     else:
         form = TodoListForm()
-    context = {
-        "form": form
-    }
+    context = {"form": form}
     return render(request, "todos/create.html", context)
 
 
@@ -70,9 +68,7 @@ def todo_item_create(request):
             return redirect("todo_list_detail", id=item.list.id)
     else:
         form = TodoItemForm()
-    context = {
-        "form": form
-    }
+    context = {"form": form}
     return render(request, "todos/items_create.html", context)
 
 
