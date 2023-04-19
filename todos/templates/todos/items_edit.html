@@ -9,11 +9,11 @@
 <body>
 <main>
     <div>
-        <h1>Create a new item</h1>
+        <h1>Update item</h1>
         <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="button">Create</button>
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button class="button">Update</button>
     </div>
 </main>
 </body>
